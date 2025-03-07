@@ -61,11 +61,11 @@ noButton.addEventListener('click', function () {
         noButton.innerText = noTexts[clickCount - 1];
     }
     // 图片变化（前 5 次变化）
-    if (clickCount === 1) mainImage.src = "static/images/shocked.png"; // 震惊
-    if (clickCount === 2) mainImage.src = "static/images/think.png"; // 思考
-    if (clickCount === 3) mainImage.src = "static/images/angry.png"; // 生气
-    if (clickCount === 4) mainImage.src = "static/images/crying.png"; // 哭
-    if (clickCount >= 5) mainImage.src = "static/images/crying.png"; // 之后一直是哭
+    if (clickCount === 1) mainImage.src = "static/picture/shocked.png"; // 震惊
+    if (clickCount === 2) mainImage.src = "static/picture/think.png"; // 思考
+    if (clickCount === 3) mainImage.src = "static/picture/angry.png"; // 生气
+    if (clickCount === 4) mainImage.src = "static/picture/crying.png"; // 哭
+    if (clickCount >= 5) mainImage.src = "static/picture/crying.png"; // 之后一直是哭
 });
 
 // Yes 按钮点击后，进入表白成功页面
