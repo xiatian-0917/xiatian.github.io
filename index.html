@@ -1,76 +1,378 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="zh-CN">
+<head><meta name="sentry-trace" content="3b58af5689e28133eda35b36d04f9f02-e16fe5f5ef263874-1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>简单HTML5页面</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1em;
-            text-align: center;
-        }
-        nav {
-            background-color: #333;
-            padding: 0.5em;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1em;
-        }
-        main {
-            padding: 1em;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
-</head>
+    <title>可以成为我的恋人吗？</title>
+    <link rel="stylesheet" href="static/css/style.css">
+     <!-- 设置网页图标 -->
+     <link rel="shortcut icon" href="assets/picture/favicon.ico" type="image/x-icon">
+     <link rel="icon" href="assets/picture/favicon.ico" type="image/x-icon">
+ </head>
+<style>
+    /* 引入自定义字体 Lolita */
+@font-face {
+    font-family: 'Lolita';
+    src: url('../font/Lolita.woff2') format('woff2'),
+         url('../font/Lolita.woff') format('woff'),
+         url('../font/Lolita.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 全局 body 样式设置 */
+body {
+    background-color: #f1d5da;
+    text-align: center;
+    font-family: 'Lolita', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 表白内容容器样式 */
+.container {
+    width: 90%;
+    max-width: 500px;
+}
+
+/* 主图片样式 */
+#mainImage {
+    width: 100%;
+    max-width: 200px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 侧头图片样式 */
+#sidehead {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+/* 新增链接样式 */
+#nameInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sidehead-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#xiaohongshuLink,
+#douyinLink,
+#repoLink {
+    font-size: 2vw;
+    color: #68495b;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+/* 标题样式 */
+h1 {
+    font-size: 3.5vw;
+    color: #68495b;
+    margin: 20px 0;
+    word-wrap: break-word;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 按钮通用样式 */
+button {
+    font-family: 'Lolita', Arial, sans-serif;
+    font-size: 4vw;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* “可以”按钮样式 */
+#yes {
+    background-color: #d4818e;
+    color: white;
+}
+
+/* “不要”按钮样式 */
+#no {
+    background-color: #6784b1;
+    color: white;
+    position: relative;
+}
+
+/* 表白成功页面样式 */
+.yes-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffdae0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+/* 表白成功文字样式 */
+.yes-text {
+    font-family: 'Lolita', Arial, sans-serif;
+    font-size: 7vw;
+}
+
+/* 表白成功图片样式 */
+.yes-image {
+    width: 50%;
+    max-width: 300px;
+}
+
+/* 输入框样式 */
+input[type="text"] {
+    font-family: 'Lolita', Arial, sans-serif;
+    font-size: 3.5vw;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    width: 90%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+/* 用于输入名字的容器样式 */
+#nameInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* 按钮激活（点击）样式，优化点击反馈 */
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 按钮获得焦点样式，焦点管理 */
+button:focus {
+    outline: 2px solid #d4818e;
+    outline-offset: 2px;
+}
+
+/* 输入框获得焦点样式，焦点管理 */
+input:focus {
+    outline: 2px solid #d4818e;
+    outline-offset: 2px;
+}
+
+/* 电脑端样式优化，当屏幕宽度大于等于 768px 时应用以下样式 */
+@media (min-width: 768px) {
+    body {
+        display: flex;
+    }
+   .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        max-width: none;
+    }
+    #mainImage {
+        width: 200px;
+    }
+    h1 {
+        font-size: 20px;
+        margin: 20px 0;
+    }
+    button {
+        font-size: 18px;
+    }
+   .yes-text {
+        font-size: 36px;
+    }
+   .yes-image {
+        width: 300px;
+    }
+    input[type="text"] {
+        font-size: 16px;
+        width: 300px;
+    }
+    #nameInputContainer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #sidehead {
+        width: 200px;
+    }
+    #xiaohongshuLink,
+    #douyinLink,
+    #repoLink {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+}
+
+/* 新增动画关键帧，实现从下往上冒出和渐显效果 */
+@keyframes slideUpFadeIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 用于触发动画的类名 */
+.slide-up-fade-in {
+    animation: slideUpFadeIn 0.5s ease-out both;
+}
+
+/* 新增动画关键帧，实现慢慢浮现效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 用于触发慢慢浮现动画的类名 */
+.fade-in {
+    animation: fadeIn 1s ease-out both;
+}
+</style>
 <body>
-    <header>
-        <h1>欢迎来到我的网站</h1>
-    </header>
-    <nav>
-        <a href="#home">首页</a>
-        <a href="#about">关于我</a>
-        <a href="#contact">联系</a>
-    </nav>
-    <main>
-        <section id="home">
-            <h2>首页</h2>
-            <p>这是一个简单的 HTML5 页面示例，欢迎访问！</p>
-        </section>
-        <section id="about">
-            <h2>关于我</h2>
-            <p>这里是关于我的一些信息。你可以在这里介绍自己。</p>
-        </section>
-        <section id="contact">
-            <h2>联系我</h2>
-            <p>如果你有任何问题，可以通过以下方式联系我：</p>
-            <ul>
-                <li>Email: example@example.com</li>
-                <li>电话: 123-456-7890</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 我的网站</p>
-    </footer>
+    <!-- 用于输入名字的容器 -->
+    <div id="nameInputContainer" style="display: none;">
+        <div id="sidehead-wrapper">
+             <!-- 新增可点击链接元素 -->
+             <a href="https://www.xiaohongshu.com/user/profile/5d47ef8e000000001203de79" id="xiaohongshuLink" target="_blank" style="display: none;">小红书(*^▽^*)</a>
+             <a href="https://www.douyin.com/user/MS4wLjABAAAAe0T2npKNPtRfu3yLhwnCWtJU5Agwb6WY9g_2mnqKfZM" id="douyinLink" target="_blank" style="display: none;">抖音( •̀ ω •́ )</a>
+             <a href="https://github.com/JayMuShui/tang-love" id="repoLink" target="_blank" style="display: none;">源代码仓库ˋ( ° ▽、° )</a>
+            <img id="sidehead" src="static/picture/sidehead.png" alt="侧头">           
+        </div>
+        <h1>你希望我怎么称呼你呢？<span style="font-size: 2vw;">(*>﹏<*)′</span></h1>
+        <p style="font-size: 2vw;">不想告诉我的话也可以留空哦</p>
+        <input type="text" id="usernameInput" placeholder="请输入你的名字">
+        <button id="confirmNameButton">是这个名字呢</button>
+    </div>
+    <!-- 表白内容容器 -->
+    <div class="container" id="confessionContainer" style="display: none;">
+        <img id="mainImage" src="static/picture/heart.png" alt="爱心">
+        <h1 id="question">可以成为我的恋人吗？</h1>
+        <div class="buttons">
+            <button id="yes">可以</button>
+            <button id="no">不要</button>
+        </div>
+    </div>
+    <script src="static/js/script.js">
+        // 获取元素
+let nameInput = document.getElementById('usernameInput');
+let confirmNameButton = document.getElementById('confirmNameButton');
+let questionText = document.getElementById('question');
+let yesButton = document.getElementById('yes');
+let noButton = document.getElementById('no');
+let mainImage = document.getElementById('mainImage');
+let nameInputContainer = document.getElementById('nameInputContainer');
+let confessionContainer = document.getElementById('confessionContainer');
+let buttonsContainer = document.querySelector('.buttons');
+let xiaohongshuLink = document.getElementById('xiaohongshuLink');
+let douyinLink = document.getElementById('douyinLink');
+let repoLink = document.getElementById('repoLink');
+
+// 显示名字输入框
+nameInputContainer.style.display = 'block';
+
+// 确认名字按钮点击事件
+confirmNameButton.addEventListener('click', function () {
+    let username = nameInput.value;
+    // 限制用户名长度，避免页面样式崩坏
+    const maxLength = 20;
+    const safeUsername = username? username.substring(0, maxLength) : "";
+    // 隐藏名字输入框，显示表白内容
+    nameInputContainer.style.display = 'none';
+    // 隐藏新增的链接元素
+    xiaohongshuLink.style.display = 'none';
+    douyinLink.style.display = 'none';
+    repoLink.style.display = 'none';
+    confessionContainer.style.display = 'block';
+    // 给按钮容器添加动画类名
+    buttonsContainer.classList.add('slide-up-fade-in');
+    // 将用户名添加到问题文本
+    questionText.innerText = `可以成为我的恋人吗？${safeUsername}`;
+});
+
+let clickCount = 0; // 记录点击 No 的次数
+// No 按钮的文字变化
+const noTexts = [
+    "？你认真的吗…",
+    "要不再想想？",
+    "不许选这个！ ",
+    "我会很伤心…",
+    "不行:(",
+];
+// No 按钮点击事件
+noButton.addEventListener('click', function () {
+    clickCount++;
+    // 让 Yes 变大，每次放大 2 倍
+    let yesSize = 1 + clickCount * 1.2;
+    yesButton.style.transform = `scale(${yesSize})`;
+    // 挤压 No 按钮，每次右移 50px
+    let noOffset = clickCount * 50;
+    noButton.style.transform = `translateX(${noOffset}px)`;
+    // 让图片和文字往上移动
+    let moveUp = clickCount * 25;
+    mainImage.style.transform = `translateY(-${moveUp}px)`;
+    questionText.style.transform = `translateY(-${moveUp}px)`;
+    // No 文案变化（前 5 次变化）
+    if (clickCount <= 5) {
+        noButton.innerText = noTexts[clickCount - 1];
+    }
+    // 图片变化（前 5 次变化）
+    if (clickCount === 1) mainImage.src = "static/picture/shocked.png"; // 震惊
+    if (clickCount === 2) mainImage.src = "static/picture/think.png"; // 思考
+    if (clickCount === 3) mainImage.src = "static/picture/angry.png"; // 生气
+    if (clickCount === 4) mainImage.src = "static/picture/crying.png"; // 哭
+    if (clickCount >= 5) mainImage.src = "static/picture/crying.png"; // 之后一直是哭
+});
+
+// Yes 按钮点击后，进入表白成功页面
+const loveTest = (username) => `!!!喜欢你!! ( >᎑<)♡︎ᐝ  ${username? `${username}  ♡︎ᐝ(>᎑< )` : ""}`;
+yesButton.addEventListener('click', function () {
+    let username = questionText.innerText.split('吗？')[1].trim();
+    // 先创建基础 HTML 结构
+    document.body.innerHTML = `
+        <div class="yes-screen">
+            <h1 class="yes-text"></h1>
+            <img src="static/picture/hug.png" alt="拥抱" class="yes-image">
+        </div>
+    `;
+    // 确保用户名安全地插入
+    document.querySelector(".yes-text").innerText = loveTest(username);
+    // 禁止滚动，保持页面美观
+    document.body.style.overflow = "hidden";
+    // 给表白成功页面添加慢慢浮现动画类名
+    document.querySelector('.yes-screen').classList.add('fade-in');
+});
+    </script>
 </body>
 </html>
