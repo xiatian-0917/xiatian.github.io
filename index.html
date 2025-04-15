@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- 顶部导航栏 -->
+    <nav class="fixed top-0 w-full bg-yellow-400 z-50" style="height: 6rem;">
+        <div class="container mx-auto px-4 py-3">
+            <!-- 餐厅信息垂直布局 -->
+            <div class="flex items-start space-x-3">
+                <img src="https://picsum.photos/80/80" alt="餐厅logo" class="w-16 h-16 rounded-lg">
+                <div class="flex flex-col">
+                    <h1 class="text-2xl font-bold text-gray-800 mb-1"></h1>
+                    <div class="flex items-center text-gray-700">
+                        <span>联系商家</span>
+                        <i class="fas fa-chevron-right ml-1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 专属菜单提示 - 移到导航栏下方 -->
+    <div class="fixed w-full bg-yellow-50 z-40" style="top: 6rem;">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center text-yellow-800 text-sm">
+                <i class="fas fa-volume-up mr-1"></i>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 调整主体内容区域的上边距 -->
+    <div class="fixed left-0 right-0 flex" style="top: 8rem; bottom: 3rem;">
+        <!-- 左侧分类导航 - 调整字体大小 -->
+        <div class="bg-white overflow-y-auto category-sidebar">
+            <div class="p-2">
+                <ul id="categoryList" class="category-list">
+                    <!-- 分类将通过JS动态生成 -->
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 右侧商品列表 -->
+        <div class="bg-white overflow-y-auto product-container">
+            <div id="productList" class="p-2 product-list">
+                <!-- 商品将通过JS动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部购物车 -->
+    <div class="fixed bottom-0 w-full bg-white shadow-lg border-t z-40 h-16">
+        <div class="container mx-auto px-4 py-2 flex items-center h-full">
+            <div class="relative cart-icon">
+                <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center -mt-6">
+                    <i class="fas fa-shopping-cart text-white text-xl"></i>
+                </div>
+                <div class="absolute -top-3 -right-1 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center text-white">
+                    <span class="text-sm">0</span>
+                </div>
+            </div>
+            <div class="ml-3 text-gray-700 text-lg">
+                <span id="cartTotal">￥0.00</span>
+            </div>
+            <div class="ml-auto">
+                <button class="px-6 py-2 bg-red-500 text-white rounded-full text-base font-medium">
+                    去结算
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 规格选择模态框 - 移动端优化 -->
+    <div class="spec-modal">
+        <div class="spec-content">
+            <div class="flex justify-between items-center mb-3">
+                <h3 class="text-lg font-bold dish-title">菜品名称</h3>
+                <button onclick="closeSpecModal()" class="text-gray-500 p-1">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="flex mb-3">
+                <img src="" alt="" class="w-20 h-20 object-cover rounded-lg dish-image">
+                <div class="ml-3">
+                    <p class="text-gray-600 text-sm dish-desc">菜品描述</p>
+                    <p class="text-red-500 font-bold text-lg mt-1 dish-price">¥0</p>
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <h4 class="font-medium text-sm mb-2">辣度</h4>
+                <div class="flex flex-wrap gap-2">
+                    <button class="px-3 py-1 border rounded-full text-sm spice-option" data-spice="不辣">不辣</button>
+                    <button class="px-3 py-1 border rounded-full text-sm spice-option" data-spice="微辣">微辣</button>
+                    <button class="px-3 py-1 border rounded-full text-sm spice-option" data-spice="中辣">中辣</button>
+                    <button class="px-3 py-1 border rounded-full text-sm spice-option" data-spice="特辣">特辣</button>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <h4 class="font-medium text-sm mb-2">分量</h4>
+                <div class="flex gap-2">
+                    <button class="px-3 py-1 border rounded-full text-sm portion-option" data-portion="标准">标准</button>
+                </div>
+            </div>
+            
+            <button id="confirmSpec" class="w-full py-2 bg-red-500 text-white rounded-full text-sm">确定</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("public_key"); // 这里需要替换为你的Public Key
+        })();
+    </script>
+</body>
+</html> 

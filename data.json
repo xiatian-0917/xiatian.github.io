@@ -1,0 +1,260 @@
+{
+  "restaurant": {
+    "name": "夏天美食铺",
+    "logo": "https://www.loliapi.com/acg/pp/",
+    "notice": {
+      "icon": "fa-volume-up",
+      "text": "专属菜单"
+    }
+  },
+  "categories": [
+    "夏荤", 
+    "夏素", 
+    "夏凉", 
+    "夏小",
+    "主食", 
+    "甜点",
+    "超荤"
+  ],
+  "dishes": [
+    {
+      "id": 1,
+      "category": "夏荤",
+      "name": "青椒炒肉",
+      "desc": "夏天的秘制青椒炒肉，鲜香可口",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": true,
+      "image": "https://ts1.tc.mm.bing.net/th/id/R-C.ee8aa4fb7da6f39980725d2f0bcddf92?rik=3clunzJ16IpoRA&riu=http%3a%2f%2fpic.rmb.bdstatic.com%2fbjh%2fnews%2fee8aa4fb7da6f39980725d2f0bcddf92.jpeg&ehk=a1R6bZpu42KIBdJRaZCkMGbm0wuu%2bMxE12QXV3iBPwc%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 2,
+      "category": "夏荤",
+      "name": "肉末土豆",
+      "desc": "拌饭神菜",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": true,
+      "image": "https://tse1-mm.cn.bing.net/th/id/OIP-C.4wucQsMhcmQq34SgFZDzFgHaFj?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": 3,
+      "category": "夏荤",
+      "name": "江西辣鸡爪",
+      "desc": "无敌好吃的辣鸡爪，香辣入味",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": true,
+      "image": "https://picsum.photos/200/200?random=2"
+    },
+    {
+      "id": 4,
+      "category": "夏荤",
+      "name": "红烧鱼块",
+      "desc": "香浓入味的红烧鱼块",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": true,
+      "image": "https://picsum.photos/200/200?random=4"
+    },
+    {
+      "id": 5,
+      "category": "夏素",
+      "name": "蒜蓉生菜",
+      "desc": "清炒生菜，鲜嫩爽口",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://img.redocn.com/sheying/20200601/suanronghaoyoushengcai_10986389.jpg"
+    },
+    {
+      "id": 6,
+      "category": "夏素",
+      "name": "粉丝包菜",
+      "desc": "粉丝包菜，黑粉头子专属",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://materials.cdn.bcebos.com/images/68520531/789d26afb8ba0d579676327bbe6612fe.jpeg"
+    },
+    {
+      "id": 7,
+      "category": "夏素",
+      "name": "蒜蓉西兰花",
+      "desc": "脆嫩的蒜蓉西兰花",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://picsum.photos/200/200?random=7"
+    },
+    {
+      "id": 8,
+      "category": "夏素",
+      "name": "麻婆豆腐",
+      "desc": "香辣可口的麻婆豆腐",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://picsum.photos/200/200?random=8"
+    },
+    {
+      "id": 9,
+      "category": "夏凉",
+      "name": "凉拌黄瓜",
+      "desc": "爽口开胃的凉拌黄瓜",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://ts1.tc.mm.bing.net/th/id/R-C.b8818b286d8c780549848c170bf486a3?rik=f1t0i4lczkkkBg&riu=http%3a%2f%2fn.sinaimg.cn%2fsinakd10121%2f672%2fw1920h1152%2f20201118%2f0479-kcysmrw6999677.jpg&ehk=4%2b2HN2Ckl7tJkawIYW4DYapXvqUQW6mncRjzfc%2bpes0%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 10,
+      "category": "夏凉",
+      "name": "凉拌木耳",
+      "desc": "爽口可口的凉拌木耳",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://materials.cdn.bcebos.com/images/58591605/939c5ca66a375bae32d316867095bd42.jpeg"
+    },
+    {
+      "id": 11,
+      "category": "夏凉",
+      "name": "凉拌海带丝",
+      "desc": "清爽解腻的凉拌海带丝",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://picsum.photos/200/200?random=11"
+    },
+    {
+      "id": 12,
+      "category": "夏凉",
+      "name": "凉拌金针菇",
+      "desc": "鲜嫩爽口的凉拌金针菇",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://picsum.photos/200/200?random=12"
+    },
+    {
+      "id": 13,
+      "category": "夏小",
+      "name": "炸薯条",
+      "desc": "不会做，点外卖吧",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://ts1.tc.mm.bing.net/th/id/R-C.3b15001fcd8559047e22aa671d7b01b7?rik=Xb6R1GegqDe%2fkg&riu=http%3a%2f%2ffjprxx.com%2fuploads%2fallimg%2f190301%2f1-1Z301114938.png&ehk=q%2f50HA%2bacExP9EKZkx2DnYUVYpU%2f5KmaEzHY9nH52vc%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 14,
+      "category": "夏小",
+      "name": "炸鸡翅",
+      "desc": "不会做，点外卖吧",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://ts1.tc.mm.bing.net/th/id/R-C.21984e28a405cd33bba0e67b5302230e?rik=Qq8bCYv3Z5Md2A&riu=http%3a%2f%2fi2.chuimg.com%2f4ed3d26902724857b12cd0883423b5d5_1125w_835h.jpg%3fimageView2%2f2%2fw%2f660%2finterlace%2f1%2fq%2f90&ehk=f2nf%2bep%2bqa%2bpkRge8rZMUFiguRLSP7jVMauV9AdYeQA%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
+    },
+    {
+      "id": 15,
+      "category": "夏小",
+      "name": "烤羊肉串",
+      "desc": "不会做，点外卖吧",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": true,
+      "image": "https://img95.699pic.com/photo/50166/5444.jpg_wh860.jpg"
+    },
+    {
+      "id": 16,
+      "category": "夏小",
+      "name": "煎饺",
+      "desc": "金黄酥脆的煎饺",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://picsum.photos/200/200?random=16"
+    },
+    {
+      "id": 17,
+      "category": "主食",
+      "name": "米饭",
+      "desc": "香喷喷的米饭",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://ts1.tc.mm.bing.net/th/id/R-C.67a94dd7a07095e67ab595ca99a88f0f?rik=j%2fcG4nhPcCsB7g&riu=http%3a%2f%2fn.sinaimg.cn%2fsinakd20200803ac%2f533%2fw1280h853%2f20200803%2f3645-ixeeirz9172525.jpg&ehk=%2fdQQPnx9xGxNVGK5GIPoBHzQjLPN2e4TgfmS5JttBzU%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 19,
+      "category": "主食",
+      "name": "蛋炒饭",
+      "desc": "香喷喷的蛋炒饭",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://ts1.tc.mm.bing.net/th/id/R-C.e84718e4172b3355b3781d77aa231761?rik=1Fczp9ASthegkw&riu=http%3a%2f%2fcp1.douguo.net%2fupload%2fcaiku%2fa%2f4%2f2%2fyuan_a431007399ca9f6e8ce9b35d60286892.jpg&ehk=%2b8rMWAsHm242e%2fW3Oxm7yqTqVES%2bAzAQLyBVM5x8wKo%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 21,
+      "category": "甜点",
+      "name": "红豆布丁",
+      "desc": "美味的红豆布丁",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://picsum.photos/200/200?random=21"
+    },
+    {
+      "id": 22,
+      "category": "甜点",
+      "name": "芒果慕斯",
+      "desc": "清爽的芒果慕斯，不会做，点外卖吧",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://tse2-mm.cn.bing.net/th/id/OIP-C.uPRFRXKs3rR4nZiJVp6TAgHaQF?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": 23,
+      "category": "甜点",
+      "name": "提拉米苏",
+      "desc": "经典意式甜点，不会做，点外卖吧",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://img95.699pic.com/photo/50398/8028.jpg_wh860.jpg"
+    },
+    {
+      "id": 24,
+      "category": "甜点",
+      "name": "草莓蛋糕",
+      "desc": "香甜的草莓蛋糕，不会做，点外卖吧",
+      "price": 0,
+      "stars": 4,
+      "needSpecs": false,
+      "image": "https://ts1.tc.mm.bing.net/th/id/R-C.586f151a78db4ecacb09257d8ae7e6ac?rik=KiQdrsR%2fm52ocg&riu=http%3a%2f%2fwww.wdmcake.cn%2fimages%2fupload%2fImage%2f%e8%8d%89%e8%8e%93%e7%94%9c%e5%bf%83%e8%9b%8b%e7%b3%95%e8%af%a6%e6%83%85%e9%a1%b5_03.jpg&ehk=LQtnxdKt0AEkXfj443vEhSR%2bYKe5svuU3BsopRMijH0%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 25,
+      "category": "超荤",
+      "name": "涩涩菜",
+      "desc": "超级美味大补品",
+      "price": 0,
+      "stars": 5,
+      "needSpecs": false,
+      "image": "https://picx.zhimg.com/v2-f6010f2f24e4036037dd88749480c557_1440w.jpg"
+    }
+  ],
+  "settings": {
+    "spiceLevels": ["不辣", "微辣", "中辣", "特辣"],
+    "portions": [
+      {
+        "name": "标准",
+        "extraPrice": 0
+      }
+    ]
+  }
+} 
