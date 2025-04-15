@@ -640,7 +640,7 @@ async function sendOrderEmail(orderItems) {
             "template_keh8qdo", // Template ID
             {
                 from_email: '2842094713@qq.com',
-                to_email: '2716387257@qq.com',
+                to_email: '2399796970@qq.com',
                 message: generateOrderEmailContent(orderItems)
             },
             "T86OzHMDVj-z3sT3i" // 替换为实际的Public Key
