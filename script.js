@@ -351,7 +351,7 @@ function updateCartUI() {
     
     // 更新所有结算按钮的文本
     checkoutButtons.forEach(button => {
-        button.textContent = `去结算${cart.count > 0 ? `(${cart.count}件)` : ''}`;
+        button.textContent = `夏单${cart.count > 0 ? `(${cart.count}件)` : ''}`;
     });
 }
 
@@ -380,7 +380,7 @@ function toggleCart() {
                         <span class="cart-total text-xl font-bold text-red-500">￥${cart.total.toFixed(2)}</span>
                     </div>
                     <button class="checkout-button w-full py-3 bg-red-500 text-white rounded-full text-base font-medium">
-                        去结算(${cart.count}件)
+                        夏单(${cart.count}件)
                     </button>
                 </div>
             </div>
